@@ -1,0 +1,3 @@
+CREATE USER bionexo;
+CREATE DATABASE bionexo;
+GRANT ALL PRIVILEGES ON DATABASE bionexo TO bionexo;
