@@ -37,3 +37,17 @@ sudo docker start postgres-bionexo
 ./mvnw test
 ```
 
+## Usage
+
+You can retrieve nearest UBS with the following commands:
+
+### Retrieve nearest UBS
+
+```bash
+curl -X GET -H "Content-Type:application/json" "http://localhost:8080/nearest?geocode_lat=1500&geocode_long=1500"
+```
+
+Example Result:
+```bash
+[{"id":1,"name":"UBS 1","address":"Rua teste 1","city":"Cidade Teste 1","phone":"","geocode":{"lat":1000.0,"long":1000.0},"scores":{"scores_size":"1","scores_medicine":"4","scores_medical_equipament":"3","scores_adaptation_for_seniors":"2"}},{"id":2,"name":"UBS 2","address":"Rua teste 2","city":"Cidade Teste 2","phone":"","geocode":{"lat":2000.0,"long":2000.0},"scores":{"scores_size":"4","scores_medicine":"1","scores_medical_equipament":"2","scores_adaptation_for_seniors":"3"}}]%
+```
