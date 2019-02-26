@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bionexo.nearestubs.controller.util.CustomErrorType;
+import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
 import com.vividsolutions.jts.geom.Coordinate;
@@ -25,9 +26,17 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 public class WebController {
 	@Autowired
 	UbsRepository repository;
-	
+
+	@Autowired
+	Version version;
+
+	@GetMapping(path = "/version", produces=MediaType.APPLICATION_JSON_VALUE)
+	public String getVersion(){
+		return version.getVersion();
+	}
+
 	@GetMapping(path = "/reload", produces=MediaType.APPLICATION_JSON_VALUE)
-	public String process(){
+	public String reload(){
 		GeometryFactory geometryFactory = new GeometryFactory();
 		repository.deleteAll();
 		repository.save(new Ubs(1, "UBS 1", "Rua teste 1", "Cidade Teste 1", "",
