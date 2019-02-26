@@ -46,9 +46,9 @@ public class UbsWebControllerTest {
 		List<Ubs> ubsList = new ArrayList<Ubs>();
 
 		ubsList.add(new Ubs(1, "UBS 1 Name", "UBS 1 Address", "UBS 1 City", "UBS 1 Phone",
-        		geometryFactory.createPoint(new Coordinate(1000, 1000)), "", "", "", ""));
+        		geometryFactory.createPoint(new Coordinate(1000, 1000)), 1, 1, 1, 1));
 		ubsList.add(new Ubs(2, "UBS 2 Name", "UBS 2 Address", "UBS 2 City", "UBS 2 Phone",
-        		geometryFactory.createPoint(new Coordinate(2000, 2000)), "", "", "", ""));
+        		geometryFactory.createPoint(new Coordinate(2000, 2000)), 1, 1, 1, 1));
     	
         given(repository.findNearestUbs(geometryFactory.createPoint(new Coordinate(1500, 1500)))).willReturn(ubsList);
      

@@ -35,11 +35,11 @@ public class UbsRepositoryIntegrationTest {
     	
 		GeometryFactory geometryFactory = new GeometryFactory();
         entityManager.persist(new Ubs(1, "UBS 1 Name", "UBS 1 Address", "UBS 1 City", "UBS 1 Phone",
-        		geometryFactory.createPoint(new Coordinate(1000, 1000)), "", "", "", ""));
+        		geometryFactory.createPoint(new Coordinate(1000, 1000)), 1, 1, 1, 1));
         entityManager.persist(new Ubs(2, "UBS 2 Name", "UBS 2 Address", "UBS 2 City", "UBS 2 Phone",
-        		geometryFactory.createPoint(new Coordinate(2000, 2000)), "", "", "", ""));
+        		geometryFactory.createPoint(new Coordinate(2000, 2000)), 1, 1, 1, 1));
         entityManager.persist(new Ubs(3, "UBS 3 Name", "UBS 3 Address", "UBS 3 City", "UBS 3 Phone",
-        		geometryFactory.createPoint(new Coordinate(3000, 3000)), "", "", "", ""));
+        		geometryFactory.createPoint(new Coordinate(3000, 3000)), 1, 1, 1, 1));
         entityManager.flush();
      
         List<Ubs> found = ubsRepository.findNearestUbs(geometryFactory.createPoint(new Coordinate(1500, 1500)));

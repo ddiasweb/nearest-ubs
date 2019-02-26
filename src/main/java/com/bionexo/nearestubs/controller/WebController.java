@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bionexo.nearestubs.controller.util.CsvLoader;
 import com.bionexo.nearestubs.controller.util.CustomErrorType;
 import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
@@ -37,12 +38,8 @@ public class WebController {
 
 	@GetMapping(path = "/reload", produces=MediaType.APPLICATION_JSON_VALUE)
 	public String reload(){
-		GeometryFactory geometryFactory = new GeometryFactory();
 		repository.deleteAll();
-		repository.save(new Ubs(1, "UBS 1", "Rua teste 1", "Cidade Teste 1", "",
-				geometryFactory.createPoint(new Coordinate(1000, 1000)), "1", "2", "3", "4"));
-		repository.save(new Ubs(2, "UBS 2", "Rua teste 2", "Cidade Teste 2", "",
-				geometryFactory.createPoint(new Coordinate(2000, 2000)), "4", "3", "2", "1"));
+		new CsvLoader().load(repository);
 		return "Done";
 	}
 		

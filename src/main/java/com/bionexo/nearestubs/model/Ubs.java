@@ -18,7 +18,7 @@ public class Ubs implements Serializable {
 	private static final long serialVersionUID = 6623138930677887037L;
 
 	@Id
-	private Integer id;
+	private int id;
 
 	@Column(name = "name")
 	private String name;
@@ -36,23 +36,23 @@ public class Ubs implements Serializable {
 	private Geometry location;
 	  
 	@Column(name = "scores_size")
-	private String scores_size;
+	private int scores_size;
 
 	@Column(name = "scores_adaptation_for_seniors")
-	private String scores_adaptation_for_seniors;
+	private int scores_adaptation_for_seniors;
 
 	@Column(name = "scores_medical_equipament")
-	private String scores_medical_equipament;
+	private int scores_medical_equipament;
 
 	@Column(name = "scores_medicine")
-	private String scores_medicine;
+	private int scores_medicine;
 
 	protected Ubs() {}
 
-	public Ubs(Integer id, String name, String address, String city, String phone,
+	public Ubs(int id, String name, String address, String city, String phone,
 			Geometry location,
-			String scores_size, String scores_adaptation_for_seniors,
-			String scores_medical_equipament, String scores_medicine) {
+			int scores_size, int scores_adaptation_for_seniors,
+			int scores_medical_equipament, int scores_medicine) {
 		this.id = id;
 		this.name = name;
 		this.address = address;
@@ -72,7 +72,7 @@ public class Ubs implements Serializable {
 	
 	public Map<String, String> toJson() {
 		Map<String, String> json = new HashMap<String, String>();
-		json.put("id", id.toString());
+		json.put("id", String.valueOf(id));
 		json.put("name", name);
 		return json;
 	}
@@ -106,10 +106,10 @@ public class Ubs implements Serializable {
 
 	public Map<String, String> getScores() {
 		Map<String, String> scores = new HashMap<String, String>();
-		scores.put("scores_size", scores_size);
-		scores.put("scores_adaptation_for_seniors", scores_adaptation_for_seniors);
-		scores.put("scores_medical_equipament", scores_medical_equipament);
-		scores.put("scores_medicine", scores_medicine);
+		scores.put("scores_size", String.valueOf(scores_size));
+		scores.put("scores_adaptation_for_seniors", String.valueOf(scores_adaptation_for_seniors));
+		scores.put("scores_medical_equipament", String.valueOf(scores_medical_equipament));
+		scores.put("scores_medicine", String.valueOf(scores_medicine));
 		return scores;
 	}
 }
