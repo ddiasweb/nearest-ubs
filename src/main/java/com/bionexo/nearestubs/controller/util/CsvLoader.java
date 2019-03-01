@@ -12,22 +12,31 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 
 public class CsvLoader {
 
-	public void load(UbsRepository repository) {
+	UbsRepository repository;
 
-        String csvFile = "database/ubs.csv";
+	public CsvLoader(UbsRepository repository) {
+		this.repository = repository;
+	}
+	
+	public void load(String csvFile) {
+
         String line = "";
         String cvsSplitBy = ",";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
         	GeometryFactory geometryFactory = new GeometryFactory();
-
+        	
+        	boolean first = true;
             while ((line = br.readLine()) != null) {
-
-                String[] colunm = line.split(cvsSplitBy);
-                
+            	if (first) {
+            		first = false;
+            		continue;
+            	}
         		try {
-            		int id = Integer.parseInt(colunm[3]);
+                    String[] colunm = line.split(cvsSplitBy);
+
+                    int id = Integer.parseInt(colunm[3]);
             		String name = colunm[4];
             		String address = colunm[5];
             		String city = colunm[7];
@@ -37,22 +46,22 @@ public class CsvLoader {
             		int scores_medical_equipament = 1;
             		int scores_medicine = 1;
 
-            		float x = Float.parseFloat(colunm[0]);
-            		float y = Float.parseFloat(colunm[1]);
+            		float x = Float.parseFloat(colunm[1]);
+            		float y = Float.parseFloat(colunm[0]);
             		Geometry location = geometryFactory.createPoint(new Coordinate(x, y));
             		
                     Ubs ubs = new Ubs(id, name, address, city, phone, location,
-                    		scores_size, scores_adaptation_for_seniors, scores_medical_equipament, scores_medicine);
-    		    	repository.save(ubs);
+                    		scores_size, scores_adaptation_for_seniors,
+                    		scores_medical_equipament, scores_medicine);
+    		    	
+                    repository.save(ubs);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("ERROR: " + e.getMessage());
 				}
-
             }
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("ERROR: " + e.getMessage());
 		}
-
 	}
 	
 }

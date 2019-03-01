@@ -28,7 +28,13 @@ sudo docker run --name postgres-bionexo -p 5432:5432 -d postgres-bionexo
 
 ```bash
 sudo docker start postgres-bionexo
-./mvnw spring-boot:run
+./mvnw spring-boot:run -Dspring-boot.run.arguments="reload"
+```
+
+## Load / Reload database from csv file
+
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.arguments="reload,-f,database/ubs-sample.csv"
 ```
 
 ## Test service

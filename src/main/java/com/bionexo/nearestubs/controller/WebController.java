@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bionexo.nearestubs.controller.util.CsvLoader;
 import com.bionexo.nearestubs.controller.util.CustomErrorType;
 import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
@@ -34,13 +33,6 @@ public class WebController {
 	@GetMapping(path = "/version", produces=MediaType.APPLICATION_JSON_VALUE)
 	public String getVersion(){
 		return version.getVersion();
-	}
-
-	@GetMapping(path = "/reload", produces=MediaType.APPLICATION_JSON_VALUE)
-	public String reload(){
-		repository.deleteAll();
-		new CsvLoader().load(repository);
-		return "Done";
 	}
 		
 	@GetMapping(path = "/find/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
