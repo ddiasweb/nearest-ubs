@@ -31,16 +31,28 @@ sudo docker start postgres-bionexo
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="reload"
 ```
 
-## Load / Reload database from csv file
+## Load sample data
 
 ```bash
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="reload,-f,database/ubs-sample.csv"
 ```
 
-## Test service
+## Test application
 
 ```bash
 ./mvnw test
+```
+
+## Build application
+
+```bash
+./mvnw package
+```
+
+## Load data on production database
+```
+wget http://repositorio.dados.gov.br/saude/unidades-saude/unidade-basica-saude/ubs.csv
+java -jar target/nearest-ubs-<VERSION>.jar reload -f ubs.csv
 ```
 
 ## Usage
@@ -50,7 +62,7 @@ You can retrieve nearest UBS with the following commands:
 ### Retrieve nearest UBS
 
 ```bash
-curl -X GET -H "Content-Type:application/json" "http://localhost:8080/nearest?geocode_lat=1500&geocode_long=1500"
+curl -X GET -H "Content-Type:application/json" "http://localhost:8080/nearest?location=1500,1500&radius=1000"
 ```
 
 Example Result:

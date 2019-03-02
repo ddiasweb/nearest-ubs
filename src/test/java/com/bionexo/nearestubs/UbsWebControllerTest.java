@@ -38,7 +38,7 @@ public class UbsWebControllerTest {
 	Version version;
 
     @Test
-    public void givenEmployees_whenGetEmployees_thenReturnJsonArray()
+    public void givenPoints_whenGetPoints_thenReturnJsonArray()
       throws Exception {
   
 		GeometryFactory geometryFactory = new GeometryFactory();
@@ -46,13 +46,13 @@ public class UbsWebControllerTest {
 		List<Ubs> ubsList = new ArrayList<Ubs>();
 
 		ubsList.add(new Ubs(1, "UBS 1 Name", "UBS 1 Address", "UBS 1 City", "UBS 1 Phone",
-        		geometryFactory.createPoint(new Coordinate(1000, 1000)), 1, 1, 1, 1));
+        		geometryFactory.createPoint(new Coordinate(10, 10)), 1, 1, 1, 1));
 		ubsList.add(new Ubs(2, "UBS 2 Name", "UBS 2 Address", "UBS 2 City", "UBS 2 Phone",
-        		geometryFactory.createPoint(new Coordinate(2000, 2000)), 1, 1, 1, 1));
+        		geometryFactory.createPoint(new Coordinate(20, 20)), 1, 1, 1, 1));
     	
-        given(repository.findNearestUbs(geometryFactory.createPoint(new Coordinate(1500, 1500)))).willReturn(ubsList);
+        given(repository.findNearestUbs(geometryFactory.createPoint(new Coordinate(15, 15)), 15)).willReturn(ubsList);
      
-        mvc.perform(get("/nearest?geocode_lat=1500&geocode_long=1500")
+        mvc.perform(get("/nearest?location=15,15&radius=1667085")
           .contentType(MediaType.APPLICATION_JSON))
           .andExpect(status().isOk())
           .andExpect(jsonPath("$", hasSize(2)));

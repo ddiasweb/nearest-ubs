@@ -13,6 +13,9 @@ import com.vividsolutions.jts.geom.Geometry;
 @Repository
 public interface UbsRepository extends CrudRepository<Ubs, Integer>{
 
-	@Query("SELECT ubs FROM Ubs ubs where distance(location, :location) < 1000")
-	public List<Ubs> findNearestUbs(@Param("location") Geometry location);
+	@Query("SELECT ubs FROM Ubs ubs where distance(location, :location) <= :radius")
+	public List<Ubs> findNearestUbs(
+		@Param("location") Geometry location,
+		@Param("radius") double radius
+	);;
 }
