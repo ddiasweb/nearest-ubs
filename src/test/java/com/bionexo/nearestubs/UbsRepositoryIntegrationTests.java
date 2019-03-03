@@ -1,9 +1,10 @@
 package com.bionexo.nearestubs;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,23 +14,28 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.bionexo.nearestubs.controller.util.CsvLoader;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
+import com.bionexo.nearestubs.util.CsvLoader;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
-public class UbsRepositoryIntegrationTest {
+public class UbsRepositoryIntegrationTests {
 
     @Autowired
     private TestEntityManager entityManager;
  
     @Autowired
     private UbsRepository ubsRepository;
- 
+
+    @Before
+    public void whenReload_thenSuccess() {
+	    new CsvLoader(ubsRepository).load("database/ubs-sample.csv");
+    }
+
     @Test
     public void whenFindNearestUbs_thenReturnUbsList() {
     	ubsRepository.deleteAll();
@@ -47,14 +53,4 @@ public class UbsRepositoryIntegrationTest {
      
         assertThat(found.size()).isEqualTo(2);
     }
-
-    @Test
-    public void whenReload_thenSuccess() {
-	    new CsvLoader(ubsRepository).load("database/ubs-sample.csv");
-    }
-    
-    @Test
-    public void whenReload_thenError() {
-	    new CsvLoader(ubsRepository).load("database/ubs.csv");
-    }    
 }

@@ -1,8 +1,10 @@
-package com.bionexo.nearestubs.controller.util;
+package com.bionexo.nearestubs.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
@@ -17,12 +19,18 @@ public class CsvLoader {
 	public CsvLoader(UbsRepository repository) {
 		this.repository = repository;
 	}
-	
+
+
 	public void load(String csvFile) {
 
         String line = "";
         String cvsSplitBy = ",";
 
+        List<String> scores = new ArrayList<String>();
+        scores.add("Desempenho mediano ou  um pouco abaixo da média");
+        scores.add("Desempenho acima da média");
+        scores.add("Desempenho muito acima da média");
+        
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
         	GeometryFactory geometryFactory = new GeometryFactory();
@@ -41,10 +49,10 @@ public class CsvLoader {
             		String address = colunm[5];
             		String city = colunm[7];
             		String phone = colunm[8];
-            		int scores_size = 1;
-            		int scores_adaptation_for_seniors = 1;
-            		int scores_medical_equipament = 1;
-            		int scores_medicine = 1;
+            		int scores_size = scores.indexOf(colunm[9]) + 1;
+            		int scores_adaptation_for_seniors = scores.indexOf(colunm[10]) + 1;
+            		int scores_medical_equipament = scores.indexOf(colunm[11]) + 1;
+            		int scores_medicine = scores.indexOf(colunm[12]) + 1;
 
             		float x = Float.parseFloat(colunm[1]);
             		float y = Float.parseFloat(colunm[0]);

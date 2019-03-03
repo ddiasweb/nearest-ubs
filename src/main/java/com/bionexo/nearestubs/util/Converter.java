@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.controller.util;
+package com.bionexo.nearestubs.util;
 
 public class Converter {
 

@@ -5,8 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.bionexo.nearestubs.controller.util.CsvLoader;
 import com.bionexo.nearestubs.repo.UbsRepository;
+import com.bionexo.nearestubs.util.CsvLoader;
 import com.kakawait.spring.boot.picocli.autoconfigure.ExitStatus;
 import com.kakawait.spring.boot.picocli.autoconfigure.HelpAwarePicocliCommand;
 

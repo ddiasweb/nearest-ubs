@@ -1,8 +1,6 @@
 package com.bionexo.nearestubs.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.vividsolutions.jts.geom.Geometry;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "ubs")
@@ -21,9 +21,11 @@ public class Ubs implements Serializable {
 	private int id;
 
 	@Column(name = "name")
+    @ApiModelProperty(notes = "The name of the UBS")
 	private String name;
 
 	@Column(name = "address")
+    @ApiModelProperty(notes = "The address of the UBS")
 	private String address;
 
 	@Column(name = "city")
@@ -33,7 +35,8 @@ public class Ubs implements Serializable {
 	private String phone;
 
 	@Column(name = "location")  
-	private Geometry location;
+    @ApiModelProperty(notes = "The location cordinates of the UBS")
+	private Geometry geometryLocation;
 	  
 	@Column(name = "scores_size")
 	private int scores_size;
@@ -50,7 +53,7 @@ public class Ubs implements Serializable {
 	protected Ubs() {}
 
 	public Ubs(int id, String name, String address, String city, String phone,
-			Geometry location,
+			Geometry geometryLocation,
 			int scores_size, int scores_adaptation_for_seniors,
 			int scores_medical_equipament, int scores_medicine) {
 		this.id = id;
@@ -58,23 +61,11 @@ public class Ubs implements Serializable {
 		this.address = address;
 		this.city = city;
 		this.phone = phone;
-		this.location = location;
+		this.geometryLocation = geometryLocation;
 		this.scores_size = scores_size;
 		this.scores_adaptation_for_seniors = scores_adaptation_for_seniors;
 		this.scores_medical_equipament = scores_medical_equipament;
 		this.scores_medicine = scores_medicine;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Ubs[id=%d, name='%s']", id, name);
-	}
-	
-	public Map<String, String> toJson() {
-		Map<String, String> json = new HashMap<String, String>();
-		json.put("id", String.valueOf(id));
-		json.put("name", name);
-		return json;
 	}
 
 	public Integer getId() {
@@ -97,19 +88,19 @@ public class Ubs implements Serializable {
 		return this.phone;
 	}
 
-	public Map<String, Double> getGeocode() {
-		Map<String, Double> geocode = new HashMap<String, Double>();
-		geocode.put("lat", location.getCoordinate().x);
-		geocode.put("long", location.getCoordinate().y);
-		return geocode;
+	public Location getGeocode() {
+		Location location = new Location();
+		location.setX(geometryLocation.getCoordinate().x);
+		location.setY(geometryLocation.getCoordinate().y);
+		return location;
 	}
 
-	public Map<String, String> getScores() {
-		Map<String, String> scores = new HashMap<String, String>();
-		scores.put("scores_size", String.valueOf(scores_size));
-		scores.put("scores_adaptation_for_seniors", String.valueOf(scores_adaptation_for_seniors));
-		scores.put("scores_medical_equipament", String.valueOf(scores_medical_equipament));
-		scores.put("scores_medicine", String.valueOf(scores_medicine));
+	public Scores getScores() {
+		Scores scores = new Scores();
+		scores.setScores_size(scores_size);
+		scores.setScores_adaptation_for_seniors(scores_adaptation_for_seniors);
+		scores.setScores_medical_equipament(scores_medical_equipament);
+		scores.setScores_medicine(scores_medicine);
 		return scores;
 	}
 }

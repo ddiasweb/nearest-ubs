@@ -5,7 +5,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.bionexo.nearestubs.controller.util.Version;
+import com.bionexo.nearestubs.util.Version;
 
 import io.swagger.annotations.SwaggerDefinition;
 import springfox.documentation.builders.ApiInfoBuilder;

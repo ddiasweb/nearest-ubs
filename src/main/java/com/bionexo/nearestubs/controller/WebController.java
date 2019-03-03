@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bionexo.nearestubs.controller.util.Converter;
-import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
+import com.bionexo.nearestubs.util.Converter;
+import com.bionexo.nearestubs.util.Version;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
+
+import io.swagger.annotations.ApiOperation;
 
 
 @RestController
@@ -34,6 +36,7 @@ public class WebController {
 	}
 			
 	@GetMapping(path = "/nearest", produces=MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation(value = "Get nearest UBS from location point by radius in metres")
 	public ResponseEntity<List<Ubs>> fetchNearestUbs(
 			@RequestParam("location") List<Double> locationParam,
 			@RequestParam("radius") double radiusMeters){

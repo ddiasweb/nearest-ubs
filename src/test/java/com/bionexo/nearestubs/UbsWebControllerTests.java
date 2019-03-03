@@ -19,16 +19,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.bionexo.nearestubs.controller.WebController;
-import com.bionexo.nearestubs.controller.util.Converter;
-import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
+import com.bionexo.nearestubs.util.Converter;
+import com.bionexo.nearestubs.util.Version;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(WebController.class)
-public class UbsWebControllerTest {
+public class UbsWebControllerTests {
     @Autowired
     private MockMvc mvc;
  
