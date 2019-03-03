@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bionexo.nearestubs.controller.util.Converter;
 import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
@@ -38,9 +39,8 @@ public class WebController {
 			@RequestParam("radius") double radiusMeters){
 		GeometryFactory geometryFactory = new GeometryFactory();
 		Geometry location = geometryFactory.createPoint(new Coordinate(locationParam.get(1), locationParam.get(0)));
-		double radiusDegrees = radiusMeters / 111139;
 		List<Ubs> ubsList = new ArrayList<Ubs>();
-		for (Ubs ubs: repository.findNearestUbs(location, radiusDegrees)) {
+		for (Ubs ubs: repository.findNearestUbs(location, Converter.metresToDegrees(radiusMeters))) {
 			ubsList.add(ubs); 
 		}
 		return new ResponseEntity<List<Ubs>>(ubsList, HttpStatus.OK);

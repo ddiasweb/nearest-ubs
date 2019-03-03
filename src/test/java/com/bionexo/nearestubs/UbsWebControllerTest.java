@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.bionexo.nearestubs.controller.WebController;
+import com.bionexo.nearestubs.controller.util.Converter;
 import com.bionexo.nearestubs.controller.util.Version;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
@@ -52,7 +53,7 @@ public class UbsWebControllerTest {
     	
         given(repository.findNearestUbs(geometryFactory.createPoint(new Coordinate(15, 15)), 15)).willReturn(ubsList);
      
-        mvc.perform(get("/nearest?location=15,15&radius=1667085")
+        mvc.perform(get("/nearest?location=15,15&radius=" + Converter.degreesToMetres(15))
           .contentType(MediaType.APPLICATION_JSON))
           .andExpect(status().isOk())
           .andExpect(jsonPath("$", hasSize(2)));

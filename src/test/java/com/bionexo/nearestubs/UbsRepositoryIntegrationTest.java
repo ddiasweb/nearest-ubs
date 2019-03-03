@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bionexo.nearestubs.controller.util.CsvLoader;
 import com.bionexo.nearestubs.model.Ubs;
 import com.bionexo.nearestubs.repo.UbsRepository;
 import com.vividsolutions.jts.geom.Coordinate;
@@ -30,7 +31,7 @@ public class UbsRepositoryIntegrationTest {
     private UbsRepository ubsRepository;
  
     @Test
-    public void whenFindByName_thenReturnEmployee() {
+    public void whenFindNearestUbs_thenReturnUbsList() {
     	ubsRepository.deleteAll();
     	
 		GeometryFactory geometryFactory = new GeometryFactory();
@@ -46,4 +47,14 @@ public class UbsRepositoryIntegrationTest {
      
         assertThat(found.size()).isEqualTo(2);
     }
+
+    @Test
+    public void whenReload_thenSuccess() {
+	    new CsvLoader(ubsRepository).load("database/ubs-sample.csv");
+    }
+    
+    @Test
+    public void whenReload_thenError() {
+	    new CsvLoader(ubsRepository).load("database/ubs.csv");
+    }    
 }
