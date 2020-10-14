@@ -12,6 +12,8 @@ authorAvatar: 'https://avatars3.githubusercontent.com/u/298960?s=140&v=4'
 
 It provides a REST API to get nearest UBS stored in a postgres. A Dockerfile is provided to create a postgres database to the application.
 
+[![Build Status](https://travis-ci.com/ddiasweb/nearest-ubs.svg?branch=master)](https://travis-ci.com/ddiasweb/nearest-ubs)
+
 ## Requisites
 
 - java 1.8
