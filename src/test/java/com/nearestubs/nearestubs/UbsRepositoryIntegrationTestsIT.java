@@ -23,7 +23,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
-public class UbsRepositoryIntegrationTests {
+public class UbsRepositoryIntegrationTestsIT {
 
     @Autowired
     private TestEntityManager entityManager;

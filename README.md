@@ -48,6 +48,12 @@ docker start postgres-nearest-ubs
 ./mvnw test
 ```
 
+## Run Integration Tests
+
+```bash
+./mvnw integration-test
+```
+
 ## Build application
 
 ```bash
