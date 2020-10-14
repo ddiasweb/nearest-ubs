@@ -28,7 +28,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(WebController.class)
-public class UbsWebControllerTests {
+public class WebControllerTests {
     @Autowired
     private MockMvc mvc;
  
