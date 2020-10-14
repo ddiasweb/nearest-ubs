@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.controller;
+package com.nearestubs.nearestubs.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bionexo.nearestubs.model.Ubs;
-import com.bionexo.nearestubs.repo.UbsRepository;
-import com.bionexo.nearestubs.util.Converter;
-import com.bionexo.nearestubs.util.Version;
+import com.nearestubs.nearestubs.model.Ubs;
+import com.nearestubs.nearestubs.repo.UbsRepository;
+import com.nearestubs.nearestubs.util.Converter;
+import com.nearestubs.nearestubs.util.Version;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;

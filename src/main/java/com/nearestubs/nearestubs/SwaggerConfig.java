@@ -1,11 +1,11 @@
-package com.bionexo.nearestubs;
+package com.nearestubs.nearestubs;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.bionexo.nearestubs.util.Version;
+import com.nearestubs.nearestubs.util.Version;
 
 import io.swagger.annotations.SwaggerDefinition;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -29,7 +29,7 @@ public class SwaggerConfig extends SpringBootServletInitializer {
     return new Docket(DocumentationType.SWAGGER_2)
 	    .apiInfo(apiInfo())
 	    .select()
-	    .apis(RequestHandlerSelectors.basePackage("com.bionexo.nearestubs.controller"))
+	    .apis(RequestHandlerSelectors.basePackage("com.nearestubs.nearestubs.controller"))
 	    .paths(PathSelectors.ant("/**"))
 	    .build();
 	}

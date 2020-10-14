@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.model;
+package com.nearestubs.nearestubs.model;
 
 public class Scores {
 	

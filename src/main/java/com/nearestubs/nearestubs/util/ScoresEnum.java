@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.util;
+package com.nearestubs.nearestubs.util;
 
 public enum ScoresEnum {
     A("Desempenho mediano ou  um pouco abaixo da média"),

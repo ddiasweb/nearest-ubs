@@ -20,15 +20,15 @@ It provides a REST API to get nearest UBS stored in a postgres. A Dockerfile is 
 ## Setup
 
 ```bash
-sudo docker build -t postgres-bionexo .
-sudo docker run --name postgres-bionexo -p 5432:5432 -d postgres-bionexo
+docker build -t postgres-nearest-ubs .
+docker run --name postgres-nearest-ubs -p 5432:5432 -d postgres-nearest-ubs
 ```
 
 ## Run service
 
 ```bash
-sudo docker start postgres-bionexo
-./mvnw spring-boot:run -Dspring-boot.run.arguments="reload"
+docker start postgres-nearest-ubs
+./mvnw spring-boot:run
 ```
 
 ## API documentation

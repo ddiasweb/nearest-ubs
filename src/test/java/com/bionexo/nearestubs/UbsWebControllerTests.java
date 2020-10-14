@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs;
+package com.nearestubs.nearestubs;
 
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.mockito.BDDMockito.given;
@@ -18,11 +18,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.bionexo.nearestubs.controller.WebController;
-import com.bionexo.nearestubs.model.Ubs;
-import com.bionexo.nearestubs.repo.UbsRepository;
-import com.bionexo.nearestubs.util.Converter;
-import com.bionexo.nearestubs.util.Version;
+import com.nearestubs.nearestubs.controller.WebController;
+import com.nearestubs.nearestubs.model.Ubs;
+import com.nearestubs.nearestubs.repo.UbsRepository;
+import com.nearestubs.nearestubs.util.Converter;
+import com.nearestubs.nearestubs.util.Version;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 

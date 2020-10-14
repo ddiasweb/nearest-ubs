@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.util;
+package com.nearestubs.nearestubs.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

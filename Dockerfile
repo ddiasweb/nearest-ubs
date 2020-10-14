@@ -1,4 +1,4 @@
 FROM mdillon/postgis
 
-ENV POSTGRES_USER bionexo
-ENV POSTGRES_PASSWORD bionexo
+ENV POSTGRES_USER nearest-ubs
+ENV POSTGRES_PASSWORD nearest-ubs

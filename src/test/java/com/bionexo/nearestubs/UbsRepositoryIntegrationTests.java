@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs;
+package com.nearestubs.nearestubs;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -14,9 +14,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.bionexo.nearestubs.model.Ubs;
-import com.bionexo.nearestubs.repo.UbsRepository;
-import com.bionexo.nearestubs.util.CsvLoader;
+import com.nearestubs.nearestubs.model.Ubs;
+import com.nearestubs.nearestubs.repo.UbsRepository;
+import com.nearestubs.nearestubs.util.CsvLoader;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 

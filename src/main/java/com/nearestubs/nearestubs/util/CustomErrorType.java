@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.util;
+package com.nearestubs.nearestubs.util;
 
 public class CustomErrorType  {
 

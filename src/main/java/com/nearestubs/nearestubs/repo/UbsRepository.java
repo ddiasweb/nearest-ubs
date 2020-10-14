@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.repo;
+package com.nearestubs.nearestubs.repo;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.bionexo.nearestubs.model.Ubs;
+import com.nearestubs.nearestubs.model.Ubs;
 import com.vividsolutions.jts.geom.Geometry;
 
 @Repository

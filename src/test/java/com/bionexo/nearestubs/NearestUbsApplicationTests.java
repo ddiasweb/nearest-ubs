@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs;
+package com.nearestubs.nearestubs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

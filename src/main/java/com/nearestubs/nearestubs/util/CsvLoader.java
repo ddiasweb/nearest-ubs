@@ -1,4 +1,4 @@
-package com.bionexo.nearestubs.util;
+package com.nearestubs.nearestubs.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bionexo.nearestubs.model.Ubs;
-import com.bionexo.nearestubs.repo.UbsRepository;
+import com.nearestubs.nearestubs.model.Ubs;
+import com.nearestubs.nearestubs.repo.UbsRepository;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;

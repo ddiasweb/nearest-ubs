@@ -1,12 +1,12 @@
-package com.bionexo.nearestubs;
+package com.nearestubs.nearestubs;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.bionexo.nearestubs.repo.UbsRepository;
-import com.bionexo.nearestubs.util.CsvLoader;
+import com.nearestubs.nearestubs.repo.UbsRepository;
+import com.nearestubs.nearestubs.util.CsvLoader;
 import com.kakawait.spring.boot.picocli.autoconfigure.ExitStatus;
 import com.kakawait.spring.boot.picocli.autoconfigure.HelpAwarePicocliCommand;
 
