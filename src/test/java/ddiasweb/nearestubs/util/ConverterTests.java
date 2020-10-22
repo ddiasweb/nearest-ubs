@@ -1,11 +1,10 @@
-package com.nearestubs.nearestubs;
+package ddiasweb.nearestubs.util;
 
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
-import com.nearestubs.nearestubs.util.Converter;
 
 @RunWith(SpringRunner.class)
 public class ConverterTests {

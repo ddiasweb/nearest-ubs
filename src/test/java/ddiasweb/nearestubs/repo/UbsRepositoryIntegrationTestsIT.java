@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs;
+package ddiasweb.nearestubs.repo;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -7,6 +7,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -14,11 +16,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.nearestubs.nearestubs.model.Ubs;
-import com.nearestubs.nearestubs.repo.UbsRepository;
-import com.nearestubs.nearestubs.util.CsvLoader;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import ddiasweb.nearestubs.model.Ubs;
+import ddiasweb.nearestubs.util.CsvLoader;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

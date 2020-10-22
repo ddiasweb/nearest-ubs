@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs;
+package ddiasweb.nearestubs.controller;
 
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.mockito.BDDMockito.given;
@@ -11,6 +11,8 @@ import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -18,13 +20,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.nearestubs.nearestubs.controller.WebController;
-import com.nearestubs.nearestubs.model.Ubs;
-import com.nearestubs.nearestubs.repo.UbsRepository;
-import com.nearestubs.nearestubs.util.Converter;
-import com.nearestubs.nearestubs.util.Version;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import ddiasweb.nearestubs.model.Ubs;
+import ddiasweb.nearestubs.repo.UbsRepository;
+import ddiasweb.nearestubs.util.Converter;
+import ddiasweb.nearestubs.util.Version;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(WebController.class)

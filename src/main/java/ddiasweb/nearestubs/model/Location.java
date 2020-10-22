@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs.model;
+package ddiasweb.nearestubs.model;
 
 public class Location {
 	

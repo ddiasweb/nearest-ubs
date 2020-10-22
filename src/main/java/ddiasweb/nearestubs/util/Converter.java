@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs.util;
+package ddiasweb.nearestubs.util;
 
 public class Converter {
 

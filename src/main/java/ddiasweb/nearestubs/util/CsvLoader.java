@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs.util;
+package ddiasweb.nearestubs.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,11 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nearestubs.nearestubs.model.Ubs;
-import com.nearestubs.nearestubs.repo.UbsRepository;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+
+import ddiasweb.nearestubs.model.Ubs;
+import ddiasweb.nearestubs.repo.UbsRepository;
 
 public class CsvLoader {
 

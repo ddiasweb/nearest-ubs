@@ -1,12 +1,11 @@
-package com.nearestubs.nearestubs;
+package ddiasweb.nearestubs;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.nearestubs.nearestubs.util.Version;
-
+import ddiasweb.nearestubs.util.Version;
 import io.swagger.annotations.SwaggerDefinition;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;

@@ -1,12 +1,13 @@
-package com.nearestubs.nearestubs;
+package ddiasweb.nearestubs;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.nearestubs.nearestubs.repo.UbsRepository;
-import com.nearestubs.nearestubs.util.CsvLoader;
+import ddiasweb.nearestubs.repo.UbsRepository;
+import ddiasweb.nearestubs.util.CsvLoader;
+
 import com.kakawait.spring.boot.picocli.autoconfigure.ExitStatus;
 import com.kakawait.spring.boot.picocli.autoconfigure.HelpAwarePicocliCommand;
 
@@ -22,6 +23,7 @@ public class NearestUbsApplication {
 	public static void main(String[] args)  {
         SpringApplication.run(NearestUbsApplication.class, args);
 	}
+	
 
 	@Component
 	@Command(name = "reload")

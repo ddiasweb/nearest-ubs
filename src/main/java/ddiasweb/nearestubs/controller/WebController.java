@@ -1,8 +1,11 @@
-package com.nearestubs.nearestubs.controller;
+package ddiasweb.nearestubs.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,14 +14,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nearestubs.nearestubs.model.Ubs;
-import com.nearestubs.nearestubs.repo.UbsRepository;
-import com.nearestubs.nearestubs.util.Converter;
-import com.nearestubs.nearestubs.util.Version;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-
+import ddiasweb.nearestubs.model.Ubs;
+import ddiasweb.nearestubs.repo.UbsRepository;
+import ddiasweb.nearestubs.util.Converter;
+import ddiasweb.nearestubs.util.Version;
 import io.swagger.annotations.ApiOperation;
 
 

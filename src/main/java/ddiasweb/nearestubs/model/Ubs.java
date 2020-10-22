@@ -1,4 +1,4 @@
-package com.nearestubs.nearestubs.model;
+package ddiasweb.nearestubs.model;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import io.swagger.annotations.ApiModelProperty;
 

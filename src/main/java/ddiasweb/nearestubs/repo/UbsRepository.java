@@ -1,14 +1,14 @@
-package com.nearestubs.nearestubs.repo;
+package ddiasweb.nearestubs.repo;
 
 import java.util.List;
 
+import org.locationtech.jts.geom.Geometry;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.nearestubs.nearestubs.model.Ubs;
-import com.vividsolutions.jts.geom.Geometry;
+import ddiasweb.nearestubs.model.Ubs;
 
 @Repository
 public interface UbsRepository extends CrudRepository<Ubs, Integer>{
